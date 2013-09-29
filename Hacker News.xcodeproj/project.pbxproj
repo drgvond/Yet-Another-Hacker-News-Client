@@ -23,6 +23,9 @@
 		0686D0BA17F7213000B54727 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0686D09617F7213000B54727 /* UIKit.framework */; };
 		0686D0C217F7213000B54727 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0686D0C017F7213000B54727 /* InfoPlist.strings */; };
 		0686D0C417F7213000B54727 /* Hacker_NewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0686D0C317F7213000B54727 /* Hacker_NewsTests.m */; };
+		06BABB8417F798B100FC29FA /* libHNKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F0677017F780F300FD9998 /* libHNKit.a */; };
+		06BABB8617F798F900FC29FA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BABB8517F798F900FC29FA /* libxml2.dylib */; };
+		06F0677717F7846300FD9998 /* UIColor+HNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0677617F7846300FD9998 /* UIColor+HNColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0686D08E17F7213000B54727;
 			remoteInfo = "Hacker News";
+		};
+		06F0676F17F780F300FD9998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06F0676B17F780F300FD9998 /* HNKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7D563E5016E4501E00BDD2DB;
+			remoteInfo = HNKit;
+		};
+		06F0677117F7811000FD9998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06F0676B17F780F300FD9998 /* HNKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D563E4F16E4501E00BDD2DB;
+			remoteInfo = HNKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -58,6 +75,10 @@
 		0686D0BF17F7213000B54727 /* Hacker NewsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hacker NewsTests-Info.plist"; sourceTree = "<group>"; };
 		0686D0C117F7213000B54727 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0686D0C317F7213000B54727 /* Hacker_NewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hacker_NewsTests.m; sourceTree = "<group>"; };
+		06BABB8517F798F900FC29FA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		06F0676B17F780F300FD9998 /* HNKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HNKit.xcodeproj; path = ../HNKit/HNKit.xcodeproj; sourceTree = "<group>"; };
+		06F0677517F7846300FD9998 /* UIColor+HNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HNColors.h"; sourceTree = "<group>"; };
+		06F0677617F7846300FD9998 /* UIColor+HNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HNColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06BABB8617F798F900FC29FA /* libxml2.dylib in Frameworks */,
+				06BABB8417F798B100FC29FA /* libHNKit.a in Frameworks */,
 				0686D09517F7213000B54727 /* CoreGraphics.framework in Frameworks */,
 				0686D09717F7213000B54727 /* UIKit.framework in Frameworks */,
 				0686D09317F7213000B54727 /* Foundation.framework in Frameworks */,
@@ -87,6 +110,7 @@
 		0686D08617F7213000B54727 = {
 			isa = PBXGroup;
 			children = (
+				06F0676B17F780F300FD9998 /* HNKit.xcodeproj */,
 				0686D09817F7213000B54727 /* Hacker News */,
 				0686D0BD17F7213000B54727 /* Hacker NewsTests */,
 				0686D09117F7213000B54727 /* Frameworks */,
@@ -106,6 +130,7 @@
 		0686D09117F7213000B54727 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06BABB8517F798F900FC29FA /* libxml2.dylib */,
 				0686D09217F7213000B54727 /* Foundation.framework */,
 				0686D09417F7213000B54727 /* CoreGraphics.framework */,
 				0686D09617F7213000B54727 /* UIKit.framework */,
@@ -117,6 +142,7 @@
 		0686D09817F7213000B54727 /* Hacker News */ = {
 			isa = PBXGroup;
 			children = (
+				06F0677817F7850E00FD9998 /* Categories */,
 				0686D0A117F7213000B54727 /* CHNAppDelegate.h */,
 				0686D0A217F7213000B54727 /* CHNAppDelegate.m */,
 				0686D0A417F7213000B54727 /* Main_iPhone.storyboard */,
@@ -160,6 +186,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		06F0676C17F780F300FD9998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06F0677017F780F300FD9998 /* libHNKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06F0677817F7850E00FD9998 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				06F0677517F7846300FD9998 /* UIColor+HNColors.h */,
+				06F0677617F7846300FD9998 /* UIColor+HNColors.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,6 +217,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				06F0677217F7811000FD9998 /* PBXTargetDependency */,
 			);
 			name = "Hacker News";
 			productName = "Hacker News";
@@ -224,6 +268,12 @@
 			mainGroup = 0686D08617F7213000B54727;
 			productRefGroup = 0686D09017F7213000B54727 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 06F0676C17F780F300FD9998 /* Products */;
+					ProjectRef = 06F0676B17F780F300FD9998 /* HNKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0686D08E17F7213000B54727 /* Hacker News */,
@@ -231,6 +281,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		06F0677017F780F300FD9998 /* libHNKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libHNKit.a;
+			remoteRef = 06F0676F17F780F300FD9998 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0686D08D17F7213000B54727 /* Resources */ = {
@@ -262,6 +322,7 @@
 				0686D0A317F7213000B54727 /* CHNAppDelegate.m in Sources */,
 				0686D09F17F7213000B54727 /* main.m in Sources */,
 				0686D0AC17F7213000B54727 /* CHNMasterViewController.m in Sources */,
+				06F0677717F7846300FD9998 /* UIColor+HNColors.m in Sources */,
 				0686D0AF17F7213000B54727 /* CHNDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +342,11 @@
 			isa = PBXTargetDependency;
 			target = 0686D08E17F7213000B54727 /* Hacker News */;
 			targetProxy = 0686D0BB17F7213000B54727 /* PBXContainerItemProxy */;
+		};
+		06F0677217F7811000FD9998 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HNKit;
+			targetProxy = 06F0677117F7811000FD9998 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -401,7 +467,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hacker News/Hacker News-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					../../HNKit/Classes/HNKit,
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "Hacker News/Hacker News-Info.plist";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -414,7 +489,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hacker News/Hacker News-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					../../HNKit/Classes/HNKit,
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "Hacker News/Hacker News-Info.plist";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -481,6 +565,7 @@
 				0686D0C917F7213000B54727 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0686D0CA17F7213000B54727 /* Build configuration list for PBXNativeTarget "Hacker NewsTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +574,7 @@
 				0686D0CC17F7213000B54727 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

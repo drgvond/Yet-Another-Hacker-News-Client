@@ -10,7 +10,7 @@
 
 @class CHNDetailViewController;
 
-@interface CHNMasterViewController : UITableViewController
+@interface CHNMasterViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) CHNDetailViewController *detailViewController;
 

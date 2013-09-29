@@ -7,6 +7,7 @@
 //
 
 #import "CHNAppDelegate.h"
+#import "UIColor+HNColors.h"
 
 @implementation CHNAppDelegate
 
@@ -18,6 +19,8 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    
+    self.window.tintColor = [UIColor hnOrangeColor];
     return YES;
 }
 							
