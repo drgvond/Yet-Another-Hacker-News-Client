@@ -11,9 +11,7 @@
 #import <HNKit/HNKit.h>
 #import "CHNDetailViewController.h"
 
-@interface CHNMasterViewController () {
-    NSMutableArray *_objects;
-}
+@interface CHNMasterViewController ()
 
 @property (strong, nonatomic) HNSession *currentSession;
 @property (strong, nonatomic) HNEntryList *submissions;
@@ -83,10 +81,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CHNEntryTableViewCell"];
 
     HNEntry *entry = self.submissions.entries[indexPath.row];
     cell.textLabel.text = entry.title;
+    NSString *detailText = [[NSString alloc] initWithFormat:@"%@ ago — %u %@ — %@",
+                            entry.posted,
+                            entry.points, (entry.points == 1 ? @"point" : @"points"),
+                            entry.submitter.identifier];
+    cell.detailTextLabel.text = detailText;
     return cell;
 }
 
@@ -126,7 +129,7 @@
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         HNEntry *entry = self.submissions.entries[indexPath.row];
-        self.detailViewController.detailItem = entry;
+        self.detailViewController.entry = entry;
     }
 }
 
@@ -134,8 +137,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        HNEntry *entry = self.submissions.entries[indexPath.row];
+        [[segue destinationViewController] setEntry:entry];
     }
 }
 

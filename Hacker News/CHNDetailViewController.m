@@ -8,6 +8,8 @@
 
 #import "CHNDetailViewController.h"
 
+#import <HNKit/HNKit.h>
+
 @interface CHNDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
@@ -17,10 +19,10 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setEntry:(HNEntry *)entry
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_entry != entry) {
+        _entry = entry;
         
         // Update the view.
         [self configureView];
@@ -35,8 +37,12 @@
 {
     // Update the user interface for the detail item.
 
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    if (self.entry) {
+        self.title = self.entry.title;
+        
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:self.entry.destination];
+        UIWebView *webView = (UIWebView *)self.view;
+        [webView loadRequest:request];
     }
 }
 

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CHNDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@class HNEntry;
 
-@property (strong, nonatomic) id detailItem;
+@interface CHNDetailViewController : UIViewController <UISplitViewControllerDelegate, UIWebViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) HNEntry *entry;
+
 @end
