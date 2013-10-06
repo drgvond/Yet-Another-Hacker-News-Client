@@ -49,14 +49,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    ((UIWebView *)self.view).scrollView.delegate = self;
     [self configureView];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Split view
@@ -73,6 +73,28 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+#pragma mark - Hiding the navigation bar on scroll
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+    return UIStatusBarAnimationSlide;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return self.navigationController.navigationBar.isHidden;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    BOOL contentBeyondTop = scrollView.contentOffset.y > navBar.frame.size.height;
+    if (contentBeyondTop != navBar.isHidden) {
+        [self.navigationController setNavigationBarHidden:!navBar.isHidden animated:YES];
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
 }
 
 @end
