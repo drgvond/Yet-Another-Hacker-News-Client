@@ -85,9 +85,9 @@
 
     HNEntry *entry = self.submissions.entries[indexPath.row];
     cell.textLabel.text = entry.title;
-    NSString *detailText = [[NSString alloc] initWithFormat:@"%@ — %u %@ — %@ ago",
+    NSString *detailText = [[NSString alloc] initWithFormat:@"%@ — %up — %uc — %@",
                             entry.destination.host,
-                            entry.points, (entry.points == 1 ? @"point" : @"points"),
+                            entry.points, entry.children,
                             entry.posted];
     cell.detailTextLabel.text = detailText;
     return cell;
