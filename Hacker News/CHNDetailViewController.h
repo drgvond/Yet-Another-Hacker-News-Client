@@ -10,7 +10,7 @@
 
 @class HNEntry;
 
-@interface CHNDetailViewController : UIViewController <UISplitViewControllerDelegate, UIScrollViewDelegate>
+@interface CHNDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) HNEntry *entry;
 
