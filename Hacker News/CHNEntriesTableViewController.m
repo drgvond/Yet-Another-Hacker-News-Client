@@ -6,19 +6,19 @@
 //  Copyright (c) 2013 Chouette Labs. All rights reserved.
 //
 
-#import "CHNMasterViewController.h"
+#import "CHNEntriesTableViewController.h"
 
 #import <HNKit/HNKit.h>
-#import "CHNDetailViewController.h"
+#import "CHNWebViewController.h"
 
-@interface CHNMasterViewController ()
+@interface CHNEntriesTableViewController ()
 
 @property (strong, nonatomic) HNSession *currentSession;
 @property (strong, nonatomic) HNEntryList *submissions;
 
 @end
 
-@implementation CHNMasterViewController
+@implementation CHNEntriesTableViewController
 
 - (void)awakeFromNib
 {
@@ -39,7 +39,8 @@
     // TODO This one's for new submissions. Only visible if actual user, or ask to sign in.
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
     self.navigationItem.rightBarButtonItem = addButton;
-    self.detailViewController = (CHNDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    self.entryViewController = (CHNWebViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     // Fetch news!
     self.currentSession = [[HNAnonymousSession alloc] init];
@@ -129,13 +130,13 @@
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         HNEntry *entry = self.submissions.entries[indexPath.row];
-        self.detailViewController.entry = entry;
+        self.entryViewController.entry = entry;
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"showArticle"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         HNEntry *entry = self.submissions.entries[indexPath.row];
         [[segue destinationViewController] setEntry:entry];

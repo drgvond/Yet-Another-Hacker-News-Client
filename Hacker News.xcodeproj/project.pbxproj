@@ -15,8 +15,8 @@
 		0686D0A317F7213000B54727 /* CHNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0686D0A217F7213000B54727 /* CHNAppDelegate.m */; };
 		0686D0A617F7213000B54727 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0686D0A417F7213000B54727 /* Main_iPhone.storyboard */; };
 		0686D0A917F7213000B54727 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0686D0A717F7213000B54727 /* Main_iPad.storyboard */; };
-		0686D0AC17F7213000B54727 /* CHNMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0686D0AB17F7213000B54727 /* CHNMasterViewController.m */; };
-		0686D0AF17F7213000B54727 /* CHNDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0686D0AE17F7213000B54727 /* CHNDetailViewController.m */; };
+		0686D0AC17F7213000B54727 /* CHNEntriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0686D0AB17F7213000B54727 /* CHNEntriesTableViewController.m */; };
+		0686D0AF17F7213000B54727 /* CHNWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0686D0AE17F7213000B54727 /* CHNWebViewController.m */; };
 		0686D0B117F7213000B54727 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0686D0B017F7213000B54727 /* Images.xcassets */; };
 		0686D0B817F7213000B54727 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0686D0B717F7213000B54727 /* XCTest.framework */; };
 		0686D0B917F7213000B54727 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0686D09217F7213000B54727 /* Foundation.framework */; };
@@ -25,6 +25,7 @@
 		0686D0C417F7213000B54727 /* Hacker_NewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0686D0C317F7213000B54727 /* Hacker_NewsTests.m */; };
 		06BABB8417F798B100FC29FA /* libHNKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F0677017F780F300FD9998 /* libHNKit.a */; };
 		06BABB8617F798F900FC29FA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BABB8517F798F900FC29FA /* libxml2.dylib */; };
+		06C23D9718059A2700A9E413 /* CHNCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C23D9618059A2700A9E413 /* CHNCommentsViewController.m */; };
 		06F0677717F7846300FD9998 /* UIColor+HNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0677617F7846300FD9998 /* UIColor+HNColors.m */; };
 /* End PBXBuildFile section */
 
@@ -65,10 +66,10 @@
 		0686D0A217F7213000B54727 /* CHNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHNAppDelegate.m; sourceTree = "<group>"; };
 		0686D0A517F7213000B54727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0686D0A817F7213000B54727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		0686D0AA17F7213000B54727 /* CHNMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHNMasterViewController.h; sourceTree = "<group>"; };
-		0686D0AB17F7213000B54727 /* CHNMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHNMasterViewController.m; sourceTree = "<group>"; };
-		0686D0AD17F7213000B54727 /* CHNDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHNDetailViewController.h; sourceTree = "<group>"; };
-		0686D0AE17F7213000B54727 /* CHNDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHNDetailViewController.m; sourceTree = "<group>"; };
+		0686D0AA17F7213000B54727 /* CHNEntriesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHNEntriesTableViewController.h; sourceTree = "<group>"; };
+		0686D0AB17F7213000B54727 /* CHNEntriesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHNEntriesTableViewController.m; sourceTree = "<group>"; };
+		0686D0AD17F7213000B54727 /* CHNWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHNWebViewController.h; sourceTree = "<group>"; };
+		0686D0AE17F7213000B54727 /* CHNWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHNWebViewController.m; sourceTree = "<group>"; };
 		0686D0B017F7213000B54727 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0686D0B617F7213000B54727 /* Hacker NewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hacker NewsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0686D0B717F7213000B54727 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -76,6 +77,8 @@
 		0686D0C117F7213000B54727 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0686D0C317F7213000B54727 /* Hacker_NewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hacker_NewsTests.m; sourceTree = "<group>"; };
 		06BABB8517F798F900FC29FA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		06C23D9518059A2700A9E413 /* CHNCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNCommentsViewController.h; sourceTree = "<group>"; };
+		06C23D9618059A2700A9E413 /* CHNCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNCommentsViewController.m; sourceTree = "<group>"; };
 		06F0676B17F780F300FD9998 /* HNKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HNKit.xcodeproj; path = ../HNKit/HNKit.xcodeproj; sourceTree = "<group>"; };
 		06F0677517F7846300FD9998 /* UIColor+HNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HNColors.h"; sourceTree = "<group>"; };
 		06F0677617F7846300FD9998 /* UIColor+HNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HNColors.m"; sourceTree = "<group>"; };
@@ -147,10 +150,12 @@
 				0686D0A217F7213000B54727 /* CHNAppDelegate.m */,
 				0686D0A417F7213000B54727 /* Main_iPhone.storyboard */,
 				0686D0A717F7213000B54727 /* Main_iPad.storyboard */,
-				0686D0AA17F7213000B54727 /* CHNMasterViewController.h */,
-				0686D0AB17F7213000B54727 /* CHNMasterViewController.m */,
-				0686D0AD17F7213000B54727 /* CHNDetailViewController.h */,
-				0686D0AE17F7213000B54727 /* CHNDetailViewController.m */,
+				0686D0AA17F7213000B54727 /* CHNEntriesTableViewController.h */,
+				0686D0AB17F7213000B54727 /* CHNEntriesTableViewController.m */,
+				0686D0AD17F7213000B54727 /* CHNWebViewController.h */,
+				0686D0AE17F7213000B54727 /* CHNWebViewController.m */,
+				06C23D9518059A2700A9E413 /* CHNCommentsViewController.h */,
+				06C23D9618059A2700A9E413 /* CHNCommentsViewController.m */,
 				0686D0B017F7213000B54727 /* Images.xcassets */,
 				0686D09917F7213000B54727 /* Supporting Files */,
 			);
@@ -321,9 +326,10 @@
 			files = (
 				0686D0A317F7213000B54727 /* CHNAppDelegate.m in Sources */,
 				0686D09F17F7213000B54727 /* main.m in Sources */,
-				0686D0AC17F7213000B54727 /* CHNMasterViewController.m in Sources */,
+				0686D0AC17F7213000B54727 /* CHNEntriesTableViewController.m in Sources */,
 				06F0677717F7846300FD9998 /* UIColor+HNColors.m in Sources */,
-				0686D0AF17F7213000B54727 /* CHNDetailViewController.m in Sources */,
+				06C23D9718059A2700A9E413 /* CHNCommentsViewController.m in Sources */,
+				0686D0AF17F7213000B54727 /* CHNWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
