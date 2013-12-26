@@ -26,6 +26,8 @@
 		06BABB8417F798B100FC29FA /* libHNKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F0677017F780F300FD9998 /* libHNKit.a */; };
 		06BABB8617F798F900FC29FA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BABB8517F798F900FC29FA /* libxml2.dylib */; };
 		06C23D9718059A2700A9E413 /* CHNCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C23D9618059A2700A9E413 /* CHNCommentsViewController.m */; };
+		06C26FD9186307B90002615F /* CHNEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C26FD8186307B90002615F /* CHNEntryTableViewCell.m */; };
+		06C26FDE1864BBC00002615F /* CHNEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C26FDD1864BBC00002615F /* CHNEntryTableViewCell.xib */; };
 		06F0677717F7846300FD9998 /* UIColor+HNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0677617F7846300FD9998 /* UIColor+HNColors.m */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,9 @@
 		06BABB8517F798F900FC29FA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		06C23D9518059A2700A9E413 /* CHNCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNCommentsViewController.h; sourceTree = "<group>"; };
 		06C23D9618059A2700A9E413 /* CHNCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNCommentsViewController.m; sourceTree = "<group>"; };
+		06C26FD7186307B90002615F /* CHNEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNEntryTableViewCell.h; sourceTree = "<group>"; };
+		06C26FD8186307B90002615F /* CHNEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNEntryTableViewCell.m; sourceTree = "<group>"; };
+		06C26FDD1864BBC00002615F /* CHNEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHNEntryTableViewCell.xib; sourceTree = "<group>"; };
 		06F0676B17F780F300FD9998 /* HNKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HNKit.xcodeproj; path = ../HNKit/HNKit.xcodeproj; sourceTree = "<group>"; };
 		06F0677517F7846300FD9998 /* UIColor+HNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HNColors.h"; sourceTree = "<group>"; };
 		06F0677617F7846300FD9998 /* UIColor+HNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HNColors.m"; sourceTree = "<group>"; };
@@ -150,8 +155,11 @@
 				0686D0A217F7213000B54727 /* CHNAppDelegate.m */,
 				0686D0A417F7213000B54727 /* Main_iPhone.storyboard */,
 				0686D0A717F7213000B54727 /* Main_iPad.storyboard */,
+				06C26FDD1864BBC00002615F /* CHNEntryTableViewCell.xib */,
 				0686D0AA17F7213000B54727 /* CHNEntriesTableViewController.h */,
 				0686D0AB17F7213000B54727 /* CHNEntriesTableViewController.m */,
+				06C26FD7186307B90002615F /* CHNEntryTableViewCell.h */,
+				06C26FD8186307B90002615F /* CHNEntryTableViewCell.m */,
 				0686D0AD17F7213000B54727 /* CHNWebViewController.h */,
 				0686D0AE17F7213000B54727 /* CHNWebViewController.m */,
 				06C23D9518059A2700A9E413 /* CHNCommentsViewController.h */,
@@ -306,6 +314,7 @@
 				0686D0B117F7213000B54727 /* Images.xcassets in Resources */,
 				0686D0A617F7213000B54727 /* Main_iPhone.storyboard in Resources */,
 				0686D09D17F7213000B54727 /* InfoPlist.strings in Resources */,
+				06C26FDE1864BBC00002615F /* CHNEntryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +336,7 @@
 				0686D0A317F7213000B54727 /* CHNAppDelegate.m in Sources */,
 				0686D09F17F7213000B54727 /* main.m in Sources */,
 				0686D0AC17F7213000B54727 /* CHNEntriesTableViewController.m in Sources */,
+				06C26FD9186307B90002615F /* CHNEntryTableViewCell.m in Sources */,
 				06F0677717F7846300FD9998 /* UIColor+HNColors.m in Sources */,
 				06C23D9718059A2700A9E413 /* CHNCommentsViewController.m in Sources */,
 				0686D0AF17F7213000B54727 /* CHNWebViewController.m in Sources */,
