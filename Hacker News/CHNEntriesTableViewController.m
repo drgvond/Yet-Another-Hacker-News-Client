@@ -10,7 +10,6 @@
 
 #import <HNKit/HNKit.h>
 #import "CHNWebViewController.h"
-#import "CHNEntryTableViewCell.h"
 
 @interface CHNEntriesTableViewController ()
 
@@ -34,12 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    self.tableView.rowHeight = 60;
-//    UINib *entryCellNib = [UINib nibWithNibName:@"CHNEntryTableViewCell" bundle:[NSBundle mainBundle]];
-//    [self.tableView registerNib:entryCellNib forCellReuseIdentifier:@"CHNEntryTableViewCell"];
-    [self.tableView registerClass:[CHNEntryTableViewCell class]
-           forCellReuseIdentifier:@"CHNEntryTableViewCell"];
     
     self.entryViewController = (CHNWebViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
@@ -113,15 +106,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CHNEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CHNEntryTableViewCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CHNEntryTableViewCell"];
 
     HNEntry *entry = self.submissions.entries[indexPath.row];
     cell.textLabel.text = entry.title;
-//    NSString *detailText = [[NSString alloc] initWithFormat:@"%@ — %up — %uc — %@",
-//                            entry.destination.host,
-//                            entry.points, entry.children,
-//                            entry.posted];
-//    cell.detailTextLabel.text = detailText;
+    NSString *detailText = [[NSString alloc] initWithFormat:@"%@ — %up — %uc — %@",
+                            entry.destination.host,
+                            entry.points, entry.children,
+                            entry.posted];
+    cell.detailTextLabel.text = detailText;
     return cell;
 }
 
