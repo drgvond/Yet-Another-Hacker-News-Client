@@ -24,7 +24,6 @@
     if (_entry != entry) {
         _entry = entry;
         
-        // Update the view.
         [self configureView];
     }
     
@@ -35,9 +34,7 @@
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-
-    if (self.entry) {        
+    if (self.entry) {
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:self.entry.destination];
         UIWebView *webView = (UIWebView *)self.view;
         [webView loadRequest:request];

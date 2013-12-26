@@ -124,8 +124,6 @@
         HNEntry *entry = self.submissions.entries[indexPath.row];
         self.entryViewController.entry = entry;
     }
-    NSLog(@"row selected");
-    [self performSegueWithIdentifier:@"showArticle" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
