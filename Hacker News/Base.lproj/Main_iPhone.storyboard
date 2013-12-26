@@ -63,7 +63,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Hacker News" id="tQt-TN-PWz">
-                        <barButtonItem key="leftBarButtonItem" image="Burger Navbar" id="hw1-Vq-rvd">
+                        <barButtonItem key="leftBarButtonItem" title="Feeds" id="hw1-Vq-rvd">
                             <connections>
                                 <segue destination="6H6-1r-Jte" kind="modal" identifier="showFeedSelector" id="R8i-EU-lUU"/>
                             </connections>
@@ -256,7 +256,6 @@
     </scenes>
     <resources>
         <image name="Article Navbar" width="22" height="22"/>
-        <image name="Burger Navbar" width="22" height="22"/>
         <image name="Comments Navbar" width="22" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -42,8 +42,10 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == self.newsMode)
+    if (indexPath.row == self.newsMode) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.textLabel.textColor = self.tableView.window.tintColor;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -52,8 +54,8 @@
     cell.accessoryType = UITableViewCellAccessoryNone;
     
     self.newsMode = indexPath.row;
-    cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    // Quickly update selected cell before unwinding
+    [self tableView:tableView willDisplayCell:[tableView cellForRowAtIndexPath:indexPath] forRowAtIndexPath:indexPath];
     
     [self performSegueWithIdentifier:@"backToEntriesList" sender:self];
 }
