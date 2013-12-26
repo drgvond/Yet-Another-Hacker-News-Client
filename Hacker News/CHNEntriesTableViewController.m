@@ -10,6 +10,7 @@
 
 #import <HNKit/HNKit.h>
 #import "CHNWebViewController.h"
+#import "CHNFeedTableViewController.h"
 
 @interface CHNEntriesTableViewController ()
 
@@ -51,12 +52,16 @@
     [self.submissions beginLoading];
 }
 
-- (IBAction)newsModeChanged:(UISegmentedControl *)sender
+- (IBAction)newsModeChanged:(UIStoryboardSegue *)sender
 {
     if (self.submissions.isLoading)
         [self.submissions cancelLoading];
     
-    self.newsMode = sender.selectedSegmentIndex;
+    CHNFeedTableViewController *source = sender.sourceViewController;
+    
+    if (source.newsMode == -1)
+        return;
+    self.newsMode = source.newsMode;
     switch (self.newsMode) {
     case 0:
         self.submissions.identifier =  kHNEntryListIdentifierSubmissions;
@@ -67,7 +72,6 @@
     case 2:
         self.submissions.identifier =  kHNEntryListIdentifierAskSubmissions;
         break;
-        
     default:
         break;
     }
@@ -115,6 +119,8 @@
                             entry.points, entry.children,
                             entry.posted];
     cell.detailTextLabel.text = detailText;
+    
+    NSLog(@"entry %d %@", indexPath.row, entry.body);
     return cell;
 }
 
@@ -132,6 +138,9 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         HNEntry *entry = self.submissions.entries[indexPath.row];
         [[segue destinationViewController] setEntry:entry];
+    } else if ([[segue identifier] isEqualToString:@"showFeedSelector"]) {
+        CHNFeedTableViewController *feedSelector = [segue.destinationViewController childViewControllers][0];
+        feedSelector.newsMode = self.newsMode;
     }
 }
 

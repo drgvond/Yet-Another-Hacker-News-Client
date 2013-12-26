@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061A7EB6186CE11E00893BC9 /* CHNFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 061A7EB5186CE11E00893BC9 /* CHNFeedTableViewController.m */; };
 		0686D09317F7213000B54727 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0686D09217F7213000B54727 /* Foundation.framework */; };
 		0686D09517F7213000B54727 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0686D09417F7213000B54727 /* CoreGraphics.framework */; };
 		0686D09717F7213000B54727 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0686D09617F7213000B54727 /* UIKit.framework */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		061A7EB4186CE11E00893BC9 /* CHNFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNFeedTableViewController.h; sourceTree = "<group>"; };
+		061A7EB5186CE11E00893BC9 /* CHNFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNFeedTableViewController.m; sourceTree = "<group>"; };
 		0686D08F17F7213000B54727 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0686D09217F7213000B54727 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0686D09417F7213000B54727 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,8 @@
 				0686D0AB17F7213000B54727 /* CHNEntriesTableViewController.m */,
 				0686D0AD17F7213000B54727 /* CHNWebViewController.h */,
 				0686D0AE17F7213000B54727 /* CHNWebViewController.m */,
+				061A7EB4186CE11E00893BC9 /* CHNFeedTableViewController.h */,
+				061A7EB5186CE11E00893BC9 /* CHNFeedTableViewController.m */,
 				06C23D9518059A2700A9E413 /* CHNCommentsViewController.h */,
 				06C23D9618059A2700A9E413 /* CHNCommentsViewController.m */,
 				0686D0B017F7213000B54727 /* Images.xcassets */,
@@ -328,6 +333,7 @@
 				0686D09F17F7213000B54727 /* main.m in Sources */,
 				0686D0AC17F7213000B54727 /* CHNEntriesTableViewController.m in Sources */,
 				06F0677717F7846300FD9998 /* UIColor+HNColors.m in Sources */,
+				061A7EB6186CE11E00893BC9 /* CHNFeedTableViewController.m in Sources */,
 				06C23D9718059A2700A9E413 /* CHNCommentsViewController.m in Sources */,
 				0686D0AF17F7213000B54727 /* CHNWebViewController.m in Sources */,
 			);
