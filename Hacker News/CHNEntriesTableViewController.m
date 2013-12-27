@@ -49,19 +49,18 @@
 
 - (IBAction)beginLoadingEntries:(id)sender
 {
+    if (self.submissions.isLoading)
+        [self.submissions cancelLoading];
     [self.submissions beginLoading];
 }
 
 - (IBAction)newsModeChanged:(UIStoryboardSegue *)sender
 {
-    if (self.submissions.isLoading)
-        [self.submissions cancelLoading];
-    
     CHNFeedTableViewController *source = sender.sourceViewController;
-    
     if (source.newsMode == -1)
         return;
     self.newsMode = source.newsMode;
+    
     switch (self.newsMode) {
     case 0:
         self.submissions.identifier =  kHNEntryListIdentifierSubmissions;
@@ -140,6 +139,7 @@
     if ([[segue identifier] isEqualToString:@"showArticle"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         HNEntry *entry = self.submissions.entries[indexPath.row];
+        NSLog(@"%@", [segue destinationViewController]);
         [[segue destinationViewController] setEntry:entry];
     } else if ([[segue identifier] isEqualToString:@"showFeedSelector"]) {
         CHNFeedTableViewController *feedSelector = [segue.destinationViewController childViewControllers][0];

@@ -57,7 +57,13 @@
     // Quickly update selected cell before unwinding
     [self tableView:tableView willDisplayCell:[tableView cellForRowAtIndexPath:indexPath] forRowAtIndexPath:indexPath];
     
-    [self performSegueWithIdentifier:@"backToEntriesList" sender:self];
+    [self performSegueWithIdentifier:@"backToEntriesList" sender:cell];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[UIBarButtonItem class]])
+        self.newsMode = -1;
 }
 
 @end

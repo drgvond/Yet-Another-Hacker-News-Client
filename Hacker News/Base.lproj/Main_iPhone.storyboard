@@ -131,7 +131,6 @@
         <!--Comments Navigation Controller-->
         <scene sceneID="hQj-oK-7zy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sXF-1G-Iex" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="eeX-mL-Xzc" userLabel="Comments Navigation Controller" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ZlJ-1P-8aN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BjB-z3-9dg">
@@ -141,6 +140,7 @@
                         <segue destination="hzg-n0-OR9" kind="relationship" relationship="rootViewController" id="Ilv-f1-YFI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXF-1G-Iex" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1491" y="64"/>
         </scene>
@@ -227,7 +227,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select News Feed" id="2nd-hZ-9Vq">
+                    <navigationItem key="navigationItem" title="News Feeds" id="2nd-hZ-9Vq">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="mLj-AO-L8C">
                             <connections>
                                 <segue destination="eCr-bW-ZW9" kind="unwind" identifier="backToEntriesList" unwindAction="newsModeChanged:" id="MHh-8f-Ulv"/>
