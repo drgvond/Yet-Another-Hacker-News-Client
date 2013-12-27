@@ -2,8 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "article-navbar@2x.png"
+      "filename" : "article-navbar@x2.png"
     }
   ],
   "info" : {

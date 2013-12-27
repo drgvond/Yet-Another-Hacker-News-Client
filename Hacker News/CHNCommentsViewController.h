@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class HNEntry;
+
 @interface CHNCommentsViewController : UITableViewController
 
-- (IBAction)goBackToWebView:(id)sender;
+@property (nonatomic) HNEntry *entry;
 
 @end

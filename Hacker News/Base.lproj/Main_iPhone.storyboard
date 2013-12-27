@@ -87,7 +87,7 @@
                     <navigationItem key="navigationItem" id="532-rr-TJl">
                         <barButtonItem key="rightBarButtonItem" image="Comments Navbar" id="qDc-tq-ZSS">
                             <connections>
-                                <segue destination="eeX-mL-Xzc" kind="modal" identifier="showComments" modalTransitionStyle="flipHorizontal" id="3Wk-Dj-3zS"/>
+                                <segue destination="eeX-mL-Xzc" kind="modal" modalTransitionStyle="coverVertical" id="f0p-UV-LET"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -116,21 +116,24 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="k3m-XG-zPB">
-                        <barButtonItem key="rightBarButtonItem" image="Article Navbar" id="Khi-dF-Xre">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Khi-dF-Xre">
                             <connections>
-                                <action selector="goBackToWebView:" destination="hzg-n0-OR9" id="1OQ-ee-Yg7"/>
+                                <segue destination="jpo-Hb-6m8" kind="unwind" unwindAction="unwindToWebView:" id="isc-Ga-8pK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTY-bX-CwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jpo-Hb-6m8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1985" y="64"/>
         </scene>
         <!--Comments Navigation Controller-->
         <scene sceneID="hQj-oK-7zy">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXF-1G-Iex" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="eeX-mL-Xzc" userLabel="Comments Navigation Controller" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZlJ-1P-8aN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BjB-z3-9dg">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -138,7 +141,6 @@
                         <segue destination="hzg-n0-OR9" kind="relationship" relationship="rootViewController" id="Ilv-f1-YFI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sXF-1G-Iex" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1491" y="64"/>
         </scene>
@@ -255,7 +257,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Article Navbar" width="22" height="22"/>
         <image name="Comments Navbar" width="22" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
