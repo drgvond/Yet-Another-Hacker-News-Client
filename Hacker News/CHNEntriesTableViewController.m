@@ -72,6 +72,9 @@
     case 2:
         self.submissions.identifier =  kHNEntryListIdentifierAskSubmissions;
         break;
+    case 3:
+        self.submissions.identifier =  kHNEntryListIdentifierBestSubmissions;
+        break;
     default:
         break;
     }
