@@ -92,7 +92,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Tc-NU-X5o">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Tc-NU-X5o">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
@@ -103,6 +103,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nkY-PF-pVv" firstAttribute="top" secondItem="tDk-Xy-Z3g" secondAttribute="bottom" id="5wN-p0-mVq"/>
+                            <constraint firstItem="6Tc-NU-X5o" firstAttribute="leading" secondItem="DWz-xr-hgu" secondAttribute="leading" id="pOe-3T-JPz"/>
+                            <constraint firstAttribute="trailing" secondItem="6Tc-NU-X5o" secondAttribute="trailing" id="tXL-cZ-ObY"/>
                             <constraint firstItem="nkY-PF-pVv" firstAttribute="top" secondItem="6Tc-NU-X5o" secondAttribute="bottom" id="uNL-0a-aFL"/>
                         </constraints>
                     </view>
