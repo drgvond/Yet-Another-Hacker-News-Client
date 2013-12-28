@@ -10,7 +10,7 @@
 
 @class HNEntry;
 
-@interface CHNWebViewController : UIViewController 
+@interface CHNWebViewController : UIViewController
 
 @property (strong, nonatomic) HNEntry *entry;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
