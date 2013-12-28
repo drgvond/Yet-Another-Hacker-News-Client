@@ -82,15 +82,15 @@
         break;
     case 1:
         self.submissions.identifier =  kHNEntryListIdentifierNewSubmissions;
-            self.navigationItem.title = @"Newest";
+        self.navigationItem.title = @"Newest";
         break;
     case 2:
         self.submissions.identifier =  kHNEntryListIdentifierAskSubmissions;
-            self.navigationItem.title = @"Ask HN";
+        self.navigationItem.title = @"Ask HN";
         break;
     case 3:
         self.submissions.identifier =  kHNEntryListIdentifierBestSubmissions;
-            self.navigationItem.title = @"Best";
+        self.navigationItem.title = @"Best";
         break;
     default:
         break;
