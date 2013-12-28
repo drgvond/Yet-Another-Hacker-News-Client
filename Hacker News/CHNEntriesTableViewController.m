@@ -138,14 +138,25 @@
 
     HNEntry *entry = self.submissions.entries[indexPath.row];
     cell.textLabel.text = entry.title;
-    NSString *detailText = [[NSString alloc] initWithFormat:@"%@ — %up — %uc — %@",
-                            entry.destination.host,
-                            entry.points, entry.children,
-                            entry.posted];
+    NSString *detailText;
+    detailText = [[NSString alloc] initWithFormat:@"%u %@ — %u %@ — %@",
+                  entry.points, entry.points == 1 ? @"point" : @"points",
+                  entry.children, entry.children == 1 ? @"comment" : @"comments",
+                  entry.posted];
+    if (entry.destination) {
+        detailText = [[NSString alloc] initWithFormat:@"%@\n%@", detailText, entry.destination.host];
+        cell.detailTextLabel.numberOfLines = 2;
+    }
     cell.detailTextLabel.text = detailText;
-    
-    NSLog(@"entry %d %@", indexPath.row, entry.body);
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HNEntry *entry = self.submissions.entries[indexPath.row];
+    if (!entry.destination)
+        return 44;
+    return 60;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath	 *)indexPath
