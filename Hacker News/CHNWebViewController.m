@@ -36,8 +36,7 @@
 {
     if (self.entry) {
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:self.entry.destination];
-        UIWebView *webView = (UIWebView *)self.view;
-        [webView loadRequest:request];
+        [self.webView loadRequest:request];
     }
 }
 

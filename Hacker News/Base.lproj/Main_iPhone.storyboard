@@ -79,11 +79,33 @@
         <scene sceneID="Cn3-H9-jdl">
             <objects>
                 <viewController title="Detail" id="Ah7-4n-0Wa" customClass="CHNWebViewController" sceneMemberID="viewController">
-                    <webView key="view" contentMode="scaleToFill" scalesPageToFit="YES" id="Tb8-4U-9NZ">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fRM-qX-gfA"/>
+                        <viewControllerLayoutGuide type="bottom" id="nkY-PF-pVv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DWz-xr-hgu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </webView>
+                        <subviews>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDk-Xy-Z3g">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Tc-NU-X5o">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="dmk-MO-otR"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nkY-PF-pVv" firstAttribute="top" secondItem="tDk-Xy-Z3g" secondAttribute="bottom" id="5wN-p0-mVq"/>
+                            <constraint firstItem="nkY-PF-pVv" firstAttribute="top" secondItem="6Tc-NU-X5o" secondAttribute="bottom" id="uNL-0a-aFL"/>
+                        </constraints>
+                    </view>
                     <navigationItem key="navigationItem" id="532-rr-TJl">
                         <barButtonItem key="rightBarButtonItem" image="Comments Navbar" id="qDc-tq-ZSS">
                             <connections>
@@ -91,6 +113,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="tDk-Xy-Z3g" id="DMM-VQ-1kt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
