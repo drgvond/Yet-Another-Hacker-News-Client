@@ -7,6 +7,7 @@
 //
 
 #import "CHNWebViewController.h"
+#import "CHNCommentsViewController.h"
 
 #import <HNKit/HNKit.h>
 
@@ -60,7 +61,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showComments"]) {
-        [[segue destinationViewController] setEntry:self.entry];
+        CHNCommentsViewController *dest = [segue.destinationViewController childViewControllers][0];
+        [dest setEntry:self.entry];
     }
 }
 

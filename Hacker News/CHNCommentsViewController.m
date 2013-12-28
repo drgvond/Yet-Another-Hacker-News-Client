@@ -20,6 +20,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        _entry = nil;
     }
     return self;
 }

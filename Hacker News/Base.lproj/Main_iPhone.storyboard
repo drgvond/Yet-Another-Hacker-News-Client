@@ -111,7 +111,7 @@
                     <navigationItem key="navigationItem" id="532-rr-TJl">
                         <barButtonItem key="rightBarButtonItem" image="Comments Navbar" id="qDc-tq-ZSS">
                             <connections>
-                                <segue destination="eeX-mL-Xzc" kind="modal" modalTransitionStyle="coverVertical" id="f0p-UV-LET"/>
+                                <segue destination="eeX-mL-Xzc" kind="modal" identifier="showComments" modalTransitionStyle="coverVertical" id="f0p-UV-LET"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
