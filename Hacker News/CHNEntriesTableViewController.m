@@ -78,15 +78,19 @@
     switch (self.newsMode) {
     case 0:
         self.submissions.identifier =  kHNEntryListIdentifierSubmissions;
+        self.navigationItem.title = @"Hacker News";
         break;
     case 1:
         self.submissions.identifier =  kHNEntryListIdentifierNewSubmissions;
+            self.navigationItem.title = @"Newest";
         break;
     case 2:
         self.submissions.identifier =  kHNEntryListIdentifierAskSubmissions;
+            self.navigationItem.title = @"Ask HN";
         break;
     case 3:
         self.submissions.identifier =  kHNEntryListIdentifierBestSubmissions;
+            self.navigationItem.title = @"Best";
         break;
     default:
         break;
