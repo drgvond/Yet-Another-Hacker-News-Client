@@ -11,12 +11,14 @@
 #import <HNKit/HNKit.h>
 #import "CHNWebViewController.h"
 #import "CHNFeedTableViewController.h"
+#import "UIColor+HNColors.h"
 
 @interface CHNEntriesTableViewController ()
 
 @property (strong, nonatomic) HNSession *currentSession;
 @property (strong, nonatomic) HNEntryList *submissions;
 @property (nonatomic) int newsMode;
+@property (nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -49,6 +51,18 @@
 
 - (IBAction)beginLoadingEntries:(id)sender
 {
+    if (!self.activityIndicator) {
+        self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.activityIndicator.color = [UIColor hnOrangeColor];
+        CGRect aiFrame = self.activityIndicator.frame;
+        CGRect tvFrame = self.navigationController.view.frame;
+        aiFrame.origin.x = (tvFrame.size.width - aiFrame.size.width) / 2;
+        aiFrame.origin.y = (tvFrame.size.height - aiFrame.size.height) / 2;
+        self.activityIndicator.frame = aiFrame;
+        [self.navigationController.view addSubview:self.activityIndicator];
+    }
+    [self.activityIndicator startAnimating];
+    
     if (self.submissions.isLoading)
         [self.submissions cancelLoading];
     [self.submissions beginLoading];
@@ -82,6 +96,7 @@
 
 - (void)submissionsStartedLoading:(NSNotification *)notification
 {
+    [self.tableView reloadData];
     NSLog(@"submissions loading... %@", notification.object);
 }
 
@@ -89,7 +104,8 @@
 {
     NSLog(@"submissions loaded %@", notification.object);
     [self.tableView reloadData];
-    [self.refreshControl endRefreshing];
+//    [self.refreshControl endRefreshing];
+    [self.activityIndicator stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,6 +123,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (self.submissions.isLoading)
+        return 0;
     return self.submissions.entries.count;
 }
 
