@@ -135,7 +135,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == self.submissions.entries.count) {
-        static NSString *LoadMoreEntriesCellId = @"CHNLoadMoreEntriesCell";
+        static NSString * const LoadMoreEntriesCellId = @"CHNLoadMoreEntriesCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:LoadMoreEntriesCellId];
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:LoadMoreEntriesCellId];
