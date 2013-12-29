@@ -149,28 +149,48 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CHNEntryTableViewCell"];
 
     HNEntry *entry = self.submissions.entries[indexPath.row];
-    cell.textLabel.text = entry.title;
-    NSString *detailText;
-    detailText = [[NSString alloc] initWithFormat:@"%u %@ — %u %@ — %@",
-                  entry.points, entry.points == 1 ? @"point" : @"points",
-                  entry.children, entry.children == 1 ? @"comment" : @"comments",
-                  entry.posted];
+    
+    cell.textLabel.text = [entry.title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    NSString *detailText = [[NSString alloc] initWithFormat:@"%u %@ — %u %@ — %@",
+                            entry.points, entry.points == 1 ? @"point" : @"points",
+                            entry.children, entry.children == 1 ? @"comment" : @"comments",
+                            entry.posted];
+    cell.detailTextLabel.textColor = [UIColor hnDarkOrangeColor];
     if (entry.destination) {
-        detailText = [[NSString alloc] initWithFormat:@"%@\n%@", detailText, entry.destination.host];
+        NSMutableAttributedString *hostAndDetailText = [[NSMutableAttributedString alloc]
+                                               initWithString:[[NSString alloc] initWithFormat:@"%@\n%@",
+                                                               entry.destination.host, detailText]];
+//        NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+//        style.lineHeightMultiple = 1;
+//        style.paragraphSpacingBefore = -20;
+        [hostAndDetailText setAttributes:@{ NSForegroundColorAttributeName: [UIColor grayColor] }
+         //                                            NSParagraphStyleAttributeName: style }
+                                   range:NSMakeRange(0, entry.destination.host.length)];
         cell.detailTextLabel.numberOfLines = 2;
+        cell.detailTextLabel.attributedText = hostAndDetailText;
+    } else {
+        cell.detailTextLabel.text = detailText;
     }
-    cell.detailTextLabel.text = detailText;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == self.submissions.entries.count)
-        return 44;
+    if (indexPath.row >= self.submissions.entries.count)
+        return 60;
+    CGFloat height = 44;
     HNEntry *entry = self.submissions.entries[indexPath.row];
-    if (!entry.destination)
-        return 44;
-    return 60;
+    if (entry.destination)
+        height += 16;
+    NSStringDrawingContext *ctx = [[NSStringDrawingContext alloc] init];
+    CGRect rect = [entry.title boundingRectWithSize:CGSizeMake(265, 0)
+                                            options:NSStringDrawingUsesLineFragmentOrigin
+                                         attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:16] }
+                                            context:ctx];
+    height += rect.size.height - 10;
+    NSLog(@"%d %g %@", indexPath.row, height, NSStringFromCGRect(rect));
+    return height;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath	 *)indexPath
