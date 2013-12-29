@@ -129,11 +129,23 @@
 {
     if (self.submissions.isLoading)
         return 0;
-    return self.submissions.entries.count;
+    return self.submissions.entries.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == self.submissions.entries.count) {
+        static NSString *LoadMoreEntriesCellId = @"CHNLoadMoreEntriesCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:LoadMoreEntriesCellId];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:LoadMoreEntriesCellId];
+            cell.textLabel.text = @"Load More...";
+            cell.textLabel.textColor = [UIColor hnOrangeColor];
+            cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        }
+        return cell;
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CHNEntryTableViewCell"];
 
     HNEntry *entry = self.submissions.entries[indexPath.row];
@@ -153,6 +165,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == self.submissions.entries.count)
+        return 44;
     HNEntry *entry = self.submissions.entries[indexPath.row];
     if (!entry.destination)
         return 44;
@@ -161,7 +175,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath	 *)indexPath
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if (indexPath.row == self.submissions.entries.count) {
+        NSLog(@"will load more");
+        if (![self.submissions isLoadingMore])
+            [self.submissions beginLoadingMore];
+    } else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         HNEntry *entry = self.submissions.entries[indexPath.row];
         self.entryViewController.entry = entry;
     }
